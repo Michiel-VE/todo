@@ -7,7 +7,7 @@ const todoRouter = require('./routes/todoRoutes')
 const app = express()
 const port = 5001
 
-app.use(cors())
+app.use(cors({origin: true}))
 
 app.use(express.json())
 
