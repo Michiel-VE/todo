@@ -1,0 +1,8 @@
+const todoRouter = require('express').Router()
+const { getAllTodos, getTodo, createTodo, updateTodo, deleteTodo } = require('../controllers/todoController')
+
+todoRouter.route('/').get(getAllTodos)
+todoRouter.route('/newTodo').post(createTodo)
+todoRouter.route('/:id').get(getTodo).put(updateTodo).delete(deleteTodo)
+
+module.exports = todoRouter
